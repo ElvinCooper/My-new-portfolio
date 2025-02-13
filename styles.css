@@ -53,8 +53,10 @@
     top: 0;
     left: 0;
     width: 100%;
-    background-color: rgb(36, 135, 140);
-    padding: 10px;
+    height: 100px;
+    /* background-color: rgb(36, 135, 140); */
+     background-color:skyblue; 
+    padding: 5px;
     z-index: 1;
   }
 
@@ -70,8 +72,19 @@
     
   }
 
+/*
+  .nombre_portafolio {
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--whiteColor);
+    margin-top: 15px;
+    margin-bottom: 5px;
+  } */
+
   .navbar {
-    padding: 40px;
+    margin-top: 2px;
+    padding: 20px;
     display: flex;
     justify-content: center;
     flex-wrap: wrap;
@@ -82,15 +95,19 @@
     text-decoration: none;
     font-size: var(--navLink__textSize);
     font-weight: 600;
+    /* color: var(--whiteColor); */
     color: var(--whiteColor);
     padding: 10px 15px;
     transition: all 0.3s ease-in-out;
-    border-radius: 5px; ;
+    border-radius: 5px; 
+    /*border: 1px solid var(--whiteColor);*/
+    border: 1px solid white;
   }
 
   .navlink:hover {
     box-shadow: 0px 4px 8px rgba(0, 0, 0.2);
-    background-color: rgba(0,0,0, 0.05);
+    /* background-color: rgba(0,0,0, 0.05); */
+    background-color: skyblue;
   }
 
   
@@ -270,7 +287,7 @@
   .cssIcon {
     color: rgb(50, 138, 232);
   }
-  
+ /* 
   .containerIcons span:nth-child(1) {
   }
   
@@ -280,7 +297,7 @@
   
   .experienceItem img {
   
-  }
+  }*/
   
   @media (min-width: 700px) {
     .navLink {
