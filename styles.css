@@ -124,25 +124,35 @@
   .principalSection p {
     color: var(--whiteColor-70);
     font-size: var(--principalParagraphSize);
-    margin: 15px 0;
+    /*margin: 15px 0;/*
+    max-width: 800px; /* Limita el ancho del texto para mejor lectura */
+    margin: 0 auto; /* Centra horizontalmente */
+    padding: 20px; /* Añade espacio alrededor */
+    text-align: justify; /* Justifica el texto */
+    
   }
   
   .principalSection ul {
     display: flex;
+    justify-content: center;
     gap: 10px;
     flex-wrap: wrap;
   }
   
   .principalSection ul a {
     background-color: var(--buttonSocialColor);
-    color: var(--whiteColor);
+    color: var(--blueColor);
     padding: 7px 25px;
     border: 1px solid rgba(255, 255, 255, 0.308);
     border-radius: 30px;
-  
     display: flex;
     align-items: center;
     gap: 10px;
+  }
+
+  .principalSection ul a:hover {
+    box-shadow: 0px 4px 8px rgb(169, 48, 48);
+    background-color: white;
   }
 
   /* ESTUIOS SECTION */
@@ -166,7 +176,7 @@
   }
 
   .estudio-grade {
-    color: var(--blueColor);
+    color: var(--whiteColor);
   }
   
   /* EXPERIENCE SECTION */
