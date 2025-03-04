@@ -31,14 +31,15 @@
   }
   
   body {
+    font-family: Arial, sans-serif;
     padding-top: 90px;
     min-height: 100dvh;
-    background: #000000;
-    /* fallback for old browsers */
+    
+    
     background: -webkit-linear-gradient(to top, #434343, #000000);
-    /* Chrome 10-25, Safari 5.1-6 */
+    
     background: linear-gradient(to top, #434343, #000000);
-    /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+ 
   
     font-family: system-ui;
     scroll-behavior: smooth;
@@ -49,14 +50,7 @@
     height: auto;
   }
 
-  /* .header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    z-index: 1;
-  }  */
+
   .header {
     position: fixed;
     top: 0;
@@ -87,9 +81,72 @@
   }
   
   .principalSection {
-    margin-top: 130px;
+    display: flex;
+    flex-direction: column; /* Modo columna en pantallas pequeñas */
+    align-items: center;
     text-align: center;
-  }
+    margin-top: 130px;
+    padding: 20px;
+}
+
+.principalSection .container {
+  display: flex;
+  flex-direction: row; /* Distribuye en dos columnas */
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  max-width: 1000px;
+  margin: auto;
+  padding: 20px;
+}
+
+.principalSection h1 {
+  font-size: var(--principalTitleSize);
+  color: var(--whiteColor);
+}
+
+.principalSection h2 {
+  font-size: var(--principalParagraphSize);
+  color: antiquewhite;
+}
+
+.principalSection .imagen {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.principalSection .imagen img {
+  width: 200px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 50%;
+}
+
+.principalSection p {
+  color: var(--whiteColor-70);
+  font-size: var(--principalParagraphSize);
+  margin: 20px auto;
+  padding: 20px;
+  text-align: justify;
+  max-width: 1000px;
+}
+
+/* .principalSection .info {
+  flex: 1;
+  text-align: left;
+  padding-right: 40px; 
+}
+
+.principalSection h1 {
+  font-size: var(--principalTitleSize);
+  color: var(--whiteColor);
+}
+
+.principalSection h2 {
+  font-size: var(--principalParagraphSize);
+  color: antiquewhite;
+}
   
   .principalSection img {
     width: 200px;
@@ -106,12 +163,12 @@
   .principalSection p {
     color: var(--whiteColor-70);
     font-size: var(--principalParagraphSize);    
-    margin: 0 auto; /* Centra horizontalmente */
-    padding: 20px; /* Añade espacio alrededor */
-    text-align: justify; /* Justifica el texto */
+    margin: 0 auto; 
+    padding: 20px; 
+    text-align: justify; 
     
   }
-  
+   */
   .principalSection ul {
     display: flex;
     justify-content: center;
@@ -296,24 +353,15 @@
   .cssIcon {
     color: rgb(50, 138, 232);
   }
- /* 
-  .containerIcons span:nth-child(1) {
-  }
-  
-  .containerIcons span:nth-child(2) {
-  }
-  
-  
-  .experienceItem img {
-  
-  }*/
-  
+ 
+
   @media (min-width: 700px) {
     .navLink {
       font-size: var(--navLink__textSize);
       font-weight: 600;
       color: var(--whiteColor);
-    }
+      
+    }    
 
     @media (max-width: 991px) { /* Aplica en pantallas menores a 992px (Bootstrap lg) */
       .navbar-nav {
@@ -326,15 +374,6 @@
     .navbar-nav .nav-item {
       padding: 10px 0;
     }
-
-    /*    
-    @media (max-width: 991px) {
-  .navbar-nav {
-    background: rgba(255, 255, 255, 0.95); /* Fondo blanco para mejorar la visibilidad 
-    padding: 10px 0;
-  }
-    
-    */
     
   
     .navLink:nth-child(1):hover {
@@ -365,4 +404,59 @@
       background-color: var(--buttonSocialColor__hover);
       transform: scale(1.1);
     }
+
+    .footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #f8f9fa;
+      color: #333;
+      font-size: 14px;
+      border-top: 1px solid #ddd;
   }
+  
+  .footer .social-links {
+      margin-top: 10px;
+      display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+  }
+
+  .social-links ul {
+    display: flex;
+    justify-content: center; 
+    gap: 20px; /* Espacio entre cada enlace */
+    list-style: none;
+    padding: 0;
+}
+  
+  .footer .social-links a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+  }
+  
+  .footer .social-links a:hover {
+      text-decoration: underline;
+      color: #0056b3 !important;
+  }
+  
+  @media (max-width: 600px) {
+    .footer {
+      background-color: var(--whiteColor);
+      color: white !important; /* Texto blanco en móviles */
+  }
+    .footer .social-links {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    .footer .social-links a:hover {
+      color: #00bfff !important; /* Cambio de color más visible en hover */
+  }
+  }
+
+ 
+}
+  
