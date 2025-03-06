@@ -58,7 +58,7 @@
     width: 100%;
     height: 80px; /* Un poco más pequeño para móviles */
     z-index: 1000;
-    background: rgba(255, 255, 255, 0.9); /* Un poco de transparencia */
+    /*background: rgba(255, 255, 255, 0.9); /* Un poco de transparencia */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
   }
 
@@ -80,14 +80,15 @@
     
   }
   
-  
+   /*----------------- SECCION SOBRE MI ------------------------*/
+
   .principalSection {
     display: flex;
     flex-direction: column; /* Modo columna en pantallas pequeñas */
     align-items: center;
     margin-top: 100px;
     text-align: center;
-    margin-top: 130px;
+    margin-top: 60px;
     padding: 20px;
 }
 
@@ -112,66 +113,14 @@
   font-size: var(--principalParagraphSize);
   color: antiquewhite;
 }
-
+ 
 .principalSection .imagen {
   flex: 1;
   display: flex;
   justify-content: center;
-}
+} 
 
-.principalSection .imagen img {
-  width: 200px;
-  height: auto;
-  object-fit: cover;
-  border-radius: 50%;
-}
 
-.principalSection p {
-  color: var(--whiteColor-70);
-  font-size: var(--principalParagraphSize);
-  margin: 20px auto;
-  padding: 20px;
-  text-align: justify;
-  max-width: 1000px;
-}
-
-/* .principalSection .info {
-  flex: 1;
-  text-align: left;
-  padding-right: 40px; 
-}
-
-.principalSection h1 {
-  font-size: var(--principalTitleSize);
-  color: var(--whiteColor);
-}
-
-.principalSection h2 {
-  font-size: var(--principalParagraphSize);
-  color: antiquewhite;
-}
-  
-  .principalSection img {
-    width: 200px;
-    height: auto;
-    object-fit: cover;
-    border-radius: 50%;
-  }
-  
-  .principalSection h1 {
-    font-size: var(--principalTitleSize);
-    color: var(--whiteColor);
-  }
-  
-  .principalSection p {
-    color: var(--whiteColor-70);
-    font-size: var(--principalParagraphSize);    
-    margin: 0 auto; 
-    padding: 20px; 
-    text-align: justify; 
-    
-  }
-   */
   .principalSection ul {
     display: flex;
     justify-content: center;
@@ -200,12 +149,16 @@
     gap: 10px;
   }
 
+  .principalSection P {
+    color: var(--whiteColor);
+  }
+
   /* .principalSection ul a:hover {
     box-shadow: 0px 4px 8px rgb(169, 48, 48);
     background-color: white;
   } */
 
-  /* ESTUIOS SECTION */
+  /*------------------------- ESTUDIO SECTION ----------------------*/
   .estudiosSection {
     margin: 50px auto;
     scroll-margin-top: 90px;
@@ -249,7 +202,6 @@
   }
   
   
-  /* ul */
   .experienceList {
     border-inline-start: 1px solid white;
     position: relative;
@@ -368,25 +320,64 @@
   }
  
 
+  /* Estilos para moviles */
   @media (min-width: 700px) {
     .navLink {
       font-size: var(--navLink__textSize);
       font-weight: 600;
       color: var(--whiteColor);
       
-    }    
+    }   
+   
+  }
 
-    @media (max-width: 991px) { /* Aplica en pantallas menores a 992px (Bootstrap lg) */
-      .navbar-nav {
-        width: 100%;
-        background: rgba(255, 255, 255, 0.95); 
-        padding: 10px 0;
-      }
+
+  @media (max-width: 991px) { /* Aplica en pantallas menores a 992px (Bootstrap lg) */
+
+    .header {
+      background-color: #000000;
     }
+      
+    .navbar-nav {
+      width: 100%;
+      /*background: rgba(32, 31, 31, 0.95); */
+      padding: 10px 0;
+    }
+  
 
     .navbar-nav .nav-item {
       padding: 10px 0;
     }
+
+    .navbar-toggler {
+      border: none;
+      outline: none;
+      background-color: rgba(255, 255, 255, 0.1); /* Fondo semitransparente */
+      padding: 10px;
+      border-radius: 5px;
+    }
+
+  }  
+  @media (max-width: 768px) {
+    .principalSection .container {
+        flex-direction: column-reverse; /* 🔥 Ahora la imagen estará arriba */
+        text-align: center; /* Centra el contenido */
+    }
+
+    .imagen img {
+        max-width: 100%;
+        height: auto;
+    }
+  }
+
+
+  .navbar-toggler-icon {
+      filter: invert(1); /* Hace el icono blanco */
+  }
+
+  .navbar-toggler:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+}
     
   
     .navLink:nth-child(1):hover {
@@ -457,8 +448,8 @@
   
   @media (max-width: 600px) {
     .footer {
-      background-color: var(--whiteColor);
-      color: white !important; /* Texto blanco en móviles */
+      background-color: #f8f9fa;
+      color: #333;
   }
     .footer .social-links {
         flex-direction: column;
