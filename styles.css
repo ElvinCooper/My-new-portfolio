@@ -334,9 +334,9 @@
 
   @media (max-width: 991px) { /* Aplica en pantallas menores a 992px (Bootstrap lg) */
 
-    .header {
+    /* .header {
       background-color: #000000;
-    }
+    } */
       
     .navbar-nav {
       width: 100%;
@@ -360,7 +360,7 @@
   }  
   @media (max-width: 768px) {
     .principalSection .container {
-        flex-direction: column-reverse; /* 🔥 Ahora la imagen estará arriba */
+        flex-direction: column-reverse; 
         text-align: center; /* Centra el contenido */
     }
 
@@ -377,7 +377,7 @@
 
   .navbar-toggler:hover {
     background-color: rgba(255, 255, 255, 0.2);
-}
+  }
     
   
     .navLink:nth-child(1):hover {
@@ -432,7 +432,7 @@
     gap: 20px; /* Espacio entre cada enlace */
     list-style: none;
     padding: 0;
-}
+  }
   
   .footer .social-links a {
     color: #007bff;
@@ -452,15 +452,27 @@
       color: #333;
   }
     .footer .social-links {
-        flex-direction: column;
-        gap: 5px;
+        /* flex-direction: column;
+        gap: 5px; */
+        display: flex;
+        justify-content: center;
+        align-items: center;
     }
 
+    .social-links ul {
+      display: flex;
+      justify-content: center;
+      padding: 0;
+    }
+
+    .social-links a.socialButton {
+      margin: 0 10px; /* Espacio entre los botones */
+    }
     .footer .social-links a:hover {
       color: #00bfff !important; /* Cambio de color más visible en hover */
   }
   }
 
  
-}
+
   
