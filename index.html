@@ -8,23 +8,9 @@
       <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
       <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-      <!-- <style>
-        .navbar-nav .nav-link {
-            color: #e4f1f5; /* Color inicial */
-            transition: color 0.3s ease-in-out, border-bottom 0.3s ease-in-out;
-        }
-    
-        .navbar-nav .nav-link:hover {
-            color: #ff5733; /* Color al pasar el mouse */
-            border-bottom: 2px solid #ff5733; /* Línea elegante debajo */
-            padding-bottom: 3px;
-        }
-    </style> -->
-    
   </head>
 <body>
-    <header class="header">
-      <!-- <nav class="navbar navbar-expand-lg" style="background-color: #121112; padding: 8px 15px; border: 2px solid #ccc;"> -->
+    <header class="header">     
         <nav class="navbar navbar-expand-lg" style="background-color: #444444; padding: 8px 15px;">
 
         <div class="container-fluid">    
@@ -46,6 +32,9 @@
                 <a class="nav-link" href="#experiencia" style="color: #e4f1f5;">Experiencia</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link" href="#stack" style="color: #e4f1f5;">Stack</a>
+              </li>
+              <li class="nav-item">
                 <a class="nav-link" href="#proyectos" style="color: #e4f1f5;">Proyectos</a>
               </li>
               <li class="nav-item">
@@ -63,83 +52,87 @@
     </header>    
 
     <main class="main">                                    
-              <!-- SECCION SOBRE MI -->
-        <section class="principalSection">  
-          <div class="container">
-              <div class="info">
-                  <h1>Hi, I'm Elvin Cooper</h1>
-                  <h2>Junior Backend Developer</h2>
-              </div>
-              <div class="imagen">
-                  <img src="imagenes/DEV-10.png" alt="Profile picture">
-              </div>
+      <!-- SECCION SOBRE MI -->
+      <section class="principalSection">  
+        <div class="container">
+          <div class="info">
+            <h1>Hi, I'm Elvin Cooper</h1>
+            <h2>Junior Backend Developer</h2>
           </div>
+          <div class="imagen">
+            <img src="imagenes/DEV-10.png" alt="Profile picture">
+          </div>
+        </div>
 
-          <p>
-            Desde 2022, he trabajado con tecnologías de Oracle (Oracle SQL, PL/SQL, Oracle Forms y Reports), optimizando sistemas empresariales y gestionando grandes volúmenes de datos.    
-            Me especializo en desarrollo backend con Python y Flask, creando APIs REST y sistemas de automatización. He desarrollado proyectos independientes, como un sistema de facturación e inventario, algoritmos y consumo de APIs externas.
-            He reforzado mis conocimientos en lógica de programación, Git/GitHub y POO con cursos en Udemy y Alura Latam. Además, tengo un nivel de inglés B2, lo que me permite interactuar con equipos internacionales.  
-            Mi objetivo es seguir creciendo como desarrollador backend, aplicando mis conocimientos en bases de datos y desarrollo web para crear soluciones innovadoras y escalables. 🚀
-        </p>                
-
+        <p>
+          Desde 2022, he trabajado con tecnologías de Oracle (Oracle SQL, PL/SQL, Oracle Forms y Reports), optimizando sistemas empresariales y gestionando grandes volúmenes de datos.    
+          Me especializo en desarrollo backend con Python y Flask, creando APIs REST y sistemas de automatización. He desarrollado proyectos independientes, como un sistema de facturación e inventario, algoritmos y consumo de APIs externas.
+          He reforzado mis conocimientos en lógica de programación, Git/GitHub y POO con cursos en Udemy y Alura Latam. Además, tengo un nivel de inglés B2, lo que me permite interactuar con equipos internacionales.  
+          Mi objetivo es seguir creciendo como desarrollador backend, aplicando mis conocimientos en bases de datos y desarrollo web para crear soluciones innovadoras y escalables. 🚀
+        </p>    
+        <div class="mt-4">
+          <a href="cv/ElvinCooper-Resume.pdf" class="btn btn-outline-warning btn-lg" download>
+            <i class="fas fa-download"></i> Descargar mi CV/Resume
+          </a>
+        </div>
+            
       </section>         
-
-                            <!-- Seccion de Mis Estudios-->
-
-        <section id="estudios" class="estudiosSection container">        
-            <h2>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-                <path d="M1 2.828c.885-.37 2.154-.829 3.5-.829 1.065 0 2.174.368 3 1 .826-.632 1.935-1 3-1 1.346 0 2.615.458 3.5.829V14.5c-.885-.37-2.154-.5-3.5-.5-1.086 0-2.354.273-3.5 1-1.146-.727-2.414-1-3.5-1-1.346 0-2.615.13-3.5.5V2.828z"/>
-              </svg>
-              
-              Mis Estudios
-            </h2>                                
-                   <!-- Estudios -->
-            <div class="row"> 
-              <div class="col-md-6">
-                <div class="estudio-item">
-                  <h3 class="estudio-grade"> Ingeniería de Sistemas y Computacion</h3>
-                  <p><strong>Universidad: </strong>Universidad Dominicana O&M</p>
-                  <p><strong>Año de finalización: </strong>2016</p>
-                  <p><strong>Descripción: </strong>Durante esta carrera, adquirí conocimientos en programación, bases de datos y arquitectura de software,
-                         programas ofimaticos, etica profesional etc.</p>
-                </div>
-              </div>
+      
+      <!-- Seccion de Mis Estudios-->
+      <section id="estudios" class="estudiosSection container">        
+          <h2>
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
+              <path d="M1 2.828c.885-.37 2.154-.829 3.5-.829 1.065 0 2.174.368 3 1 .826-.632 1.935-1 3-1 1.346 0 2.615.458 3.5.829V14.5c-.885-.37-2.154-.5-3.5-.5-1.086 0-2.354.273-3.5 1-1.146-.727-2.414-1-3.5-1-1.346 0-2.615.13-3.5.5V2.828z"/>
+            </svg>
+            
+            Mis Estudios
+          </h2>                                
+                  <!-- Estudios -->
+          <div class="row"> 
             <div class="col-md-6">
               <div class="estudio-item">
-                <h3 class="estudio-grade">Curso de Desarrollo con Python</h3>
-                <p><strong>Institución: </strong>Udemy</p>
-                <p><strong>Año: </strong>2023</p>
-                <p><strong>Descripción: </strong>Curso enfocado en el desarrollo de aplicaciones con Python, abordando desde los fundamentos hasta conceptos avanzados. Incluyó manejo de bases de datos con SQL y NoSQL, desarrollo backend con Flask, algoritmos tareas especificas etc.</p>
+                <h3 class="estudio-grade"> Ingeniería de Sistemas y Computacion</h3>
+                <p><strong>Universidad: </strong>Universidad Dominicana O&M</p>
+                <p><strong>Año de finalización: </strong>2016</p>
+                <p><strong>Descripción: </strong>Durante esta carrera, adquirí conocimientos en programación, bases de datos y arquitectura de software,
+                        programas ofimaticos, etica profesional etc.</p>
               </div>
+            </div>
+          <div class="col-md-6">
+            <div class="estudio-item">
+              <h3 class="estudio-grade">Curso de Desarrollo con Python</h3>
+              <p><strong>Institución: </strong>Udemy</p>
+              <p><strong>Año: </strong>2023</p>
+              <p><strong>Descripción: </strong>Curso enfocado en el desarrollo de aplicaciones con Python, abordando desde los fundamentos hasta conceptos avanzados. Incluyó manejo de bases de datos con SQL y NoSQL, desarrollo backend con Flask, algoritmos tareas especificas etc.</p>
             </div>
           </div>
-                            
-          <!-- Agregar más estudios aquí -->
-          <div class="row">
-            <div class="col-md-6">
-              <div class="estudio-item">
-                <h3 class="estudio-grade">Diploma de Ingles</h3>
-                <p><strong>Institución: </strong>Alianza Juvenil</p>
-                <p><strong>Año: </strong>2017</p>
-                <p><strong>Descripción: </strong>Programa de formación en inglés con enfoque en gramática, comprensión oral, escritura y conversación. Incluyó práctica en situaciones reales. Actualmente, tengo un nivel B2 según el Marco Común Europeo de Referencia para las Lenguas (MCER)..</p>
-              </div>
+        </div>
+                          
+        <!-- Agregar más estudios aquí -->
+        <div class="row">
+          <div class="col-md-6">
+            <div class="estudio-item">
+              <h3 class="estudio-grade">Diploma de Ingles</h3>
+              <p><strong>Institución: </strong>Alianza Juvenil</p>
+              <p><strong>Año: </strong>2017</p>
+              <p><strong>Descripción: </strong>Programa de formación en inglés con enfoque en gramática, comprensión oral, escritura y conversación. Incluyó práctica en situaciones reales. Actualmente, tengo un nivel B2 según el Marco Común Europeo de Referencia para las Lenguas (MCER)..</p>
             </div>
+          </div>
 
-            <div class="col-md-6">
-              <div class="estudio-item">
-                <h3 class="estudio-grade">Cursos de Desarrollo y Programación</h3>
-                <p><strong>Plataforma: </strong>Alura Latam</p>
-                <p><strong>Año: </strong>2022</p>
-                <p><strong>Cursos realizados: </strong>Lógica de Programación, HTML, Git y GitHub, Programación Orientada a Objetos</p>
-                <p><strong>Descripción: </strong>Formación en conceptos clave de desarrollo web y programación. Aprendí desde la base de la lógica de programación hasta el manejo de Git y GitHub para control de versiones, además de principios de Programación Orientada a Objetos aplicados en proyectos prácticos.</p>
-              </div>
+          <div class="col-md-6">
+            <div class="estudio-item">
+              <h3 class="estudio-grade">Cursos de Desarrollo y Programación</h3>
+              <p><strong>Plataforma: </strong>Alura Latam</p>
+              <p><strong>Año: </strong>2022</p>
+              <p><strong>Cursos realizados: </strong>Lógica de Programación, HTML, Git y GitHub, Programación Orientada a Objetos</p>
+              <p><strong>Descripción: </strong>Formación en conceptos clave de desarrollo web y programación. Aprendí desde la base de la lógica de programación hasta el manejo de Git y GitHub para control de versiones, además de principios de Programación Orientada a Objetos aplicados en proyectos prácticos.</p>
             </div>
-                                            
-                <!--  agregar más estudios aquí -->
-              </div>
+          </div>
+                                          
+              <!--  agregar más estudios aquí -->
             </div>
-          </section>                                                  
+          </div>
+        </section>                                                  
                                                       <!--  SECCION DE EXPERIENCIAS -->                                                      
         <section class="experienceSection container" id="experiencia">
             <h2>
@@ -174,20 +167,69 @@
                 
               </li>
               
-              <li class="experienceItemList">
-                <div class="decorativeCircleList"></div>
-                <time datetime="2023-04">Abril 2023 - Actualidad</time>
-                <h3>Desarrollador Independiente con Python</h3>
-                <p>
-                  Desarrollo de soluciones tecnológicas personalizadas con Python, incluyendo un sistema de facturación e inventario para pequeñas empresas.  
-                  Implementación de algoritmos para automatización de procesos y optimización de datos.  
-                  Creación de APIs básicas para la integración entre sistemas utilizando Flask y FastAPI.  
-                  Manejo de bases de datos SQL para almacenamiento de información estructurada y gestión eficiente de datos.  
-                  Experiencia en control de versiones con Git y GitHub para la gestión y colaboración en proyectos.  
-                </p>
-              </li>                                         
+             <li class="experienceItemList">
+              <div class="decorativeCircleList"></div>
+              <time datetime="2023-04">Abril 2023 - Actualidad</time>
+              <h3>Desarrollador Independiente con Python</h3>
+              <p>
+                Desarrollo de soluciones tecnológicas personalizadas con Python. He creado aplicaciones RESTful usando Flask, SQLAlchemy, JWT y pruebas automatizadas con Pytest.  
+                Destacan proyectos como una API para gestión de contactos, con autenticación segura, documentación Swagger y arquitectura profesional basada en Blueprints y Marshmallow.  
+                Manejo de bases de datos relacionales con SQLite y Oracle SQL.  
+                Experiencia en control de versiones con Git y GitHub, e implementación de entornos virtuales y archivos `.env` para configuración flexible y segura.  
+                Adicionalmente, he trabajado en automatización de procesos, envío de correos con Mailgun, y construcción de interfaces API robustas y seguras.  
+              </p>
+            </li>
+                                         
             </ol>
           </section>
+
+                                             <!----------- Seccion de Stack Tecnologico ----------->
+                <section class="StackSection container" id="stack">
+        <h2>
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
+            class="bi bi-code-slash" viewBox="0 0 16 16">
+            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
+          </svg>
+          Stack Tecnológico
+        </h2>
+
+        <div class="row mt-4">
+          <!-- Lenguajes y Frameworks -->
+          <div class="col-md-4">
+            <h3><i class="fas fa-code"></i> Lenguajes & Frameworks</h3>
+            <ul>
+              <li><i class="fab fa-python"></i> Python</li>
+              <li><i class="fas fa-fire"></i> Flask</li>
+              <li><i class="fas fa-database"></i> PL/SQL</li>
+              <li><i class="fas fa-layer-group"></i> Oracle Forms & Reports</li>
+            </ul>
+          </div>
+
+          <!-- Bases de Datos -->
+          <div class="col-md-4">
+            <h3><i class="fas fa-database"></i> Bases de Datos</h3>
+            <ul>
+              <li><i class="fas fa-database"></i> Oracle SQL | PL/SQL</li>
+              <li><i class="fas fa-database"></i> SQLite</li>
+              <li><i class="fas fa-server"></i> SQLAlchemy</li>
+            </ul>
+          </div>
+
+          <!-- Herramientas & Ecosistema de Desarrollo -->
+          <div class="col-md-4">
+            <h3><i class="fas fa-tools"></i> Herramientas & Ecosistema</h3>
+            <ul>
+              <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
+              <li><i class="fas fa-box"></i> Docker (básico)</li>
+              <li><i class="fas fa-file-code"></i> OpenAPI | Swagger</li>
+              <li><i class="fas fa-lightbulb"></i> Notion | Trello | YAML</li>
+              <li><i class="fas fa-code"></i> Visual Studio Code</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+                
+
     
                                               <!---------------  SECCION DE PROYECTOS ---------------------->
 
@@ -198,29 +240,80 @@
               </svg>
               Proyectos
             </h2>
-            
+
             <article class="experienceItem">
-              <h3>Proyecto 1: Sistema de Facturación e Inventario</h3>
+              <h3>Proyecto 1: API REST para Gestión de Contactos</h3>
               <p>
-                Este proyecto es un sistema de facturación e inventario desarrollado con Python y SQL.
-                Puedes ver el código completo en GitHub haciendo clic en la imagen o en el enlace debajo.
+                API RESTful desarrollada con Flask para gestionar contactos y usuarios.  
+                Incluye autenticación con JWT, documentación Swagger, estructura modular con Blueprints, validación con Marshmallow y pruebas automatizadas con Pytest.  
+                Soporte para envío de correos mediante Mailgun y despliegue en Render.  
+                <br>Documentación disponible y endpoints listos para probar en línea.
               </p>
-              
               <!-- Imagen con enlace a GitHub -->
-              <a href="https://github.com/ElvinCooper/Sistema-Gestor-de-inventario.git" target="_blank">
-                <img src="imagenes\backend.jpg" alt="Proyecto 1 - Sistema de Facturación e Inventario" width="500">
+              <a href="https://github.com/ElvinCooper/-Contact_api" target="_blank">
+                <div class="row project-gallery mb-3">
+                <div class="col-md-4 col-sm-12">
+                  <img src="imagenes/contactos-api.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div>
+                <!--<div class="col-md-4 col-sm-12">
+                  <img src="imagenes/readme_api_contactos.png" alt="Captura 2 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <img src="imagenes/infonovax3.jpg" alt="Captura 3 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div> -->
+              </div>
               </a>
               <h4>
-                🔗 <a href="https://github.com/ElvinCooper/Sistema-Gestor-de-inventario.git" target="_blank" style="color: antiquewhite;">
+                🔗 <a href="https://github.com/ElvinCooper/-Contact_api" target="_blank" style="color: antiquewhite;">
                   Ver código en GitHub
+                </a>
+              </h4>
+              <h4>
+                📚 <a href="https://contact-api-8rpp.onrender.com/apidocs" target="_blank" style="color: antiquewhite;">
+                  Ver documentación Swagger
                 </a>
               </h4>
             </article>
 
+
             <article class="experienceItem">
-              <h3>Proyecto 2: Sistema de conversion de monedas</h3>
+              <h3>Proyecto 2: API REST para App Móvil de Noticias (InfoNovaX)</h3>
               <p>
-                Este proyecto es un sistema de conversion de monedas desarrollado con Python y SQL.
+                API RESTful desarrollada en colaboración para una aplicación móvil de noticias. Permite gestionar usuarios, publicaciones, favoritos, categorías y países.
+                Implementada con Flask, SQLAlchemy, JWT, y documentada con Swagger. Utiliza Blueprints para modularidad, y CORS para integración con frontend móvil.
+              </p>
+
+              <!-- Galería de imágenes -->
+              <div class="row project-gallery mb-3">
+                <div class="col-md-4 col-sm-12">
+                  <img src="imagenes/api_noticias.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div>
+               <!-- <div class="col-md-4 col-sm-12">
+                  <img src="imagenes/infonovax2.jpg" alt="Captura 2 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div>
+                <div class="col-md-4 col-sm-12">
+                  <img src="imagenes/infonovax3.jpg" alt="Captura 3 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div> -->
+              </div>
+
+              <h4>
+                🔗 <a href="https://github.com/ElvinCooper/api_noticias" target="_blank" style="color: antiquewhite;">
+                  Ver código en GitHub
+                </a>
+              </h4>
+              <h4>
+                📚 <a href="https://api-infonovax.onrender.com/apidocs/" target="_blank" style="color: antiquewhite;">
+                  Ver documentación Swagger
+                </a>
+              </h4>
+            </article>
+
+
+            
+            <article class="experienceItem">
+              <h3>Proyecto 3: Sistema de Facturación e Inventario</h3>
+              <p>
+                Este proyecto es un sistema de facturación e inventario desarrollado con Python y SQL.
                 Puedes ver el código completo en GitHub haciendo clic en la imagen o en el enlace debajo.
               </p>
               
@@ -233,7 +326,8 @@
                   Ver código en GitHub
                 </a>
               </h4>
-            </article>                          
+            </article>            
+          </section>             
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
@@ -245,7 +339,7 @@
     
         navLinks.forEach(function (link) {
           link.addEventListener("click", function () {
-            // Si el menú está abierto en móvil, lo cerramos
+            // Si el menú está abierto en móvil, se cierra
             if (window.innerWidth < 992) {
               navbarToggler.click();
             }
@@ -258,41 +352,28 @@
   <p>&copy; 2025 Elvin Cooper. Todos los derechos reservados.</p>
   <div class="social-links">
                       <!-- <h3 class="estudio-grade"> Contacto</h3> -->
-          <ul>            
-            <a class="socialButton" href="mailto:ing.elvin01cooper@gmail.com?subject=Contacto Portafolio&body= Me gustaria agendar una entrevista" target="_blank" style="color: #0072C6;">
-              <svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
-                <path
-                  d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"
-                />
-              </svg>
-              Email
-            </a>
-            <a class="socialButton" href="https://github.com/ElvinCooper" target="_blank" style="color: #181717;">
-                <svg
-                  xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-github" viewBox="0 0 16 16" >
-                  <path
-                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
-                  />
-                </svg>
-                Github     
-            </a>              
-            <a class="socialButton" href="https://www.linkedin.com/in/elvin-cooper-8a5647b6/" target="_blank" style="color: #0A66C2;">
-              <svg
-                xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-linkedin" viewBox="0 0 16 16" >
-                <path
-                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854zm4.943 12.248V6.169H2.542v7.225zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248S2.4 3.226 2.4 3.934c0 .694.521 1.248 1.327 1.248zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016l.016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225z"
-                />
-              </svg>
-              Linkedin
-            </a>
-            <a class="socialButton" href="https://wa.me/18092501339/" target="_blank" style="color:#25D366 ;">
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-whatsapp" viewBox="0 0 16 16">
-                <path d="M13.601 2.326A7.85 7.85 0 0 0 7.994 0C3.627 0 .068 3.558.064 7.926c0 1.399.366 2.76 1.057 3.965L0 16l4.204-1.102a7.9 7.9 0 0 0 3.79.965h.004c4.368 0 7.926-3.558 7.93-7.93A7.9 7.9 0 0 0 13.6 2.326zM7.994 14.521a6.6 6.6 0 0 1-3.356-.92l-.24-.144-2.494.654.666-2.433-.156-.251a6.56 6.56 0 0 1-1.007-3.505c0-3.626 2.957-6.584 6.591-6.584a6.56 6.56 0 0 1 4.66 1.931 6.56 6.56 0 0 1 1.928 4.66c-.004 3.639-2.961 6.592-6.592 6.592m3.615-4.934c-.197-.099-1.17-.578-1.353-.646-.182-.065-.315-.099-.445.099-.133.197-.513.646-.627.775-.114.133-.232.148-.43.05-.197-.1-.836-.308-1.592-.985-.59-.525-.985-1.175-1.103-1.372-.114-.198-.011-.304.088-.403.087-.088.197-.232.296-.346.1-.114.133-.198.198-.33.065-.134.034-.248-.015-.347-.05-.099-.445-1.076-.612-1.47-.16-.389-.323-.335-.445-.34-.114-.007-.247-.007-.38-.007a.73.73 0 0 0-.529.247c-.182.198-.691.677-.691 1.654s.71 1.916.81 2.049c.098.133 1.394 2.132 3.383 2.992.47.205.84.326 1.129.418.475.152.904.129 1.246.08.38-.058 1.171-.48 1.338-.943.164-.464.164-.86.114-.943-.049-.084-.182-.133-.38-.232"/>
-              </svg>                 
-              Whatsapp
-            </a>                 
-          </ul>     
+    <ul class="footer-social-buttons">
+      <li>
+        <a class="socialButton email" href="mailto:ing.elvin01cooper@gmail.com?subject=Contacto Portafolio&body= Me gustaría agendar una entrevista" target="_blank">
+          <i class="bi bi-envelope"></i> Email
+        </a>
+      </li>
+      <li>
+        <a class="socialButton github" href="https://github.com/ElvinCooper" target="_blank">
+          <i class="bi bi-github"></i> GitHub
+        </a>
+      </li>
+      <li>
+        <a class="socialButton linkedin" href="https://www.linkedin.com/in/elvin-cooper-8a5647b6/" target="_blank">
+          <i class="bi bi-linkedin"></i> LinkedIn
+        </a>
+      </li>
+      <li>
+        <a class="socialButton whatsapp" href="https://wa.me/18092501339/" target="_blank">
+          <i class="bi bi-whatsapp"></i> WhatsApp
+        </a>
+      </li>
+    </ul>
   </div>
 </footer>
 </html>

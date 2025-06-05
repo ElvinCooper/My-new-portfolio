@@ -36,9 +36,11 @@
     min-height: 100dvh;
     
     
-    background: -webkit-linear-gradient(to top, #434343, #000000);
+     background: -webkit-linear-gradient(to top, #434343, #000000); 
     
-    background: linear-gradient(to top, #434343, #000000);
+     background: linear-gradient(to top, #434343, #000000); 
+
+   
  
   
     font-family: system-ui;
@@ -96,13 +98,48 @@
 
   .principalSection {
     display: flex;
-    flex-direction: column; /* Modo columna en pantallas pequeñas */
+    flex-direction: column;
     align-items: center;
+    text-align: center;
+    margin-top: 80px;
+    padding: 30px 20px;
+    max-width: 1000px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .principalSection h1 {
+  font-size: var(--principalTitleSize);
+  color: var(--whiteColor);
+  margin-bottom: 10px;
+  }
+
+.principalSection h2 {
+  font-size: var(--principalParagraphSize);
+  color: antiquewhite;
+  margin-bottom: 20px;
+}
+
+.principalSection p {
+  color: var(--whiteColor);
+  font-size: var(--principalParagraphSize);
+  line-height: 1.6;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+
+
+
+  /* .principalSection {
+    display: flex;
+    flex-direction: column; /* Modo columna en pantallas pequeñas */
+    /* align-items: center;
     margin-top: 100px;
     text-align: center;
     margin-top: 60px;
     padding: 20px;
-}
+}  */
 
 
 .principalSection .container {
@@ -269,6 +306,58 @@
     left: -5px;
     margin-top: 7px;
   }
+
+    
+  /* STACK TECNOLÓGICO */
+  .StackSection {
+    margin: 50px auto;
+    scroll-margin-top: 90px;
+  }
+
+  .StackSection h2 {
+    color: var(--whiteColor);
+    font-size: var(--SectionTitleSize);
+    margin-bottom: 30px;
+  }
+
+  .StackSection h2 svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+  }
+
+  .StackSection h3 {
+    color: rgb(82, 152, 196);
+    font-size: var(--ExperienciaTitleSize);
+    margin-bottom: 10px;
+  }
+
+  .StackSection ul {
+    list-style: none;
+    padding-left: 0;
+  }
+
+
+  .StackSection ul li {
+  color: var(--whiteColor);
+  font-size: var(--ExperienceParagraphSixe);
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.StackSection ul li i {
+  min-width: 20px;
+  color: var(--whiteColor-70);
+}
+
+  .StackSection ul li::before {
+    /* content: "✔️"; */
+    position: absolute;
+    left: 0;
+  }
+  
   
   /* PROJECT SECTION */
   .projectsSection {
@@ -285,6 +374,16 @@
     width: 20px;
     height: 20px;
   }
+
+  .project-img-small {
+  max-width: 90%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+
+  /* Experience Section*/
   
   .experienceItem {
     margin-bottom: 40px;
@@ -380,6 +479,10 @@
         height: auto;
     }
 
+    .project-img-small {
+        max-width: 80%;
+    }
+
 
     .navbar-nav .nav-link {
       color: var(--whiteColor); /* Color inicial */
@@ -432,7 +535,9 @@
       transform: scale(1.1);
     }
 
-    .footer {
+    /* footer Section*/
+
+    /* .footer {
       text-align: center;
       padding: 20px;
       background-color: #f8f9fa;
@@ -452,7 +557,7 @@
   .social-links ul {
     display: flex;
     justify-content: center; 
-    gap: 20px; /* Espacio entre cada enlace */
+    gap: 20px; 
     list-style: none;
     padding: 0;
   }
@@ -468,7 +573,88 @@
       text-decoration: underline;
       color: #0056b3 !important;
   }
-  
+   */
+    .footer {
+  text-align: center;
+  padding: 20px;
+  background-color: #f8f9fa;
+  color: #333;
+  font-size: 14px;
+  border-top: 1px solid #ddd;
+}
+
+
+
+    .footer-social-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 15px;
+  padding: 0;
+  list-style: none;
+}
+
+.footer-social-buttons li {
+  display: inline-block;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 20px;
+  border-radius: 30px;
+  font-weight: bold;
+  font-size: 0.95rem;
+  text-decoration: none;
+  border: 2px solid transparent;
+  transition: all 0.3s ease-in-out;
+  background-color: #222;
+  color: white;
+}
+
+.socialButton i {
+  font-size: 1.2rem;
+}
+
+/* Colores por marca */
+.socialButton.email {
+  background-color: #0072C6;
+}
+
+.socialButton.github {
+  background-color: #181717;
+}
+
+.socialButton.linkedin {
+  background-color: #0A66C2;
+}
+
+.socialButton.whatsapp {
+  background-color: #25D366;
+}
+
+/* Hover */
+.socialButton:hover {
+  transform: scale(1.08);
+  background-color: white;
+  color: #000;
+  border: 2px solid currentColor;
+}
+
+.botoncv:hover {
+  transform: scale(1.08);
+  background-color: gray;
+  color: #000;
+  border: 2px solid currentColor;
+}
+
+
+
+
+
+
+
   @media (max-width: 600px) {
     .footer {
       background-color: #f8f9fa;
@@ -494,6 +680,17 @@
     .footer .social-links a:hover {
       color: #00bfff !important; /* Cambio de color más visible en hover */
   }
+
+  .project-gallery img {
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.project-gallery img:hover {
+  transform: scale(1.03);
+  box-shadow: 0 4px 12px rgba(255, 255, 255, 0.2);
+}
+
   }
 
  
