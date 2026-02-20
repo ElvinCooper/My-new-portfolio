@@ -1,464 +1,707 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-      <meta charset="UTF-8">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Portafolio Backend </title>
-      <link rel="stylesheet" href="styles.css">
-      <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
-      <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-  </head>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Backend - Elvin Cooper</title>
+    <!-- Bootstrap & Google Fonts -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <style>
+        :root {
+            --whiteColor: #ffffff;
+            --primary-gradient: linear-gradient(90deg, #0072C6, #00c6ff);
+            --nav-bg: rgba(26, 26, 26, 0.95);
+            --card-bg: #222222;
+            --accent-color: #00c6ff;
+            --timeline-border: #333;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #1a1a1a;
+            color: white;
+            padding-top: 80px;
+            scroll-behavior: smooth;
+        }
+
+        /* --- NAVBAR --- */
+        .navbar {
+            background-color: var(--nav-bg) !important;
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        .navbar-brand {
+            font-weight: 600;
+            color: var(--accent-color) !important;
+            letter-spacing: 1px;
+        }
+
+        .nav-link {
+            color: var(--whiteColor) !important;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-link:hover { color: var(--accent-color) !important; }
+
+        /* --- HERO SECTION --- */
+        .hero-section {
+            padding: 100px 0 60px;
+            background: radial-gradient(circle at top right, rgba(0, 114, 198, 0.15), transparent);
+            text-align: center;
+        }
+
+        .hero-icon {
+            font-size: 4rem;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+            display: inline-block;
+            filter: drop-shadow(0 0 15px rgba(0, 198, 255, 0.3));
+        }
+
+        .hero-title {
+            font-size: clamp(2.5rem, 8vw, 4rem);
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #888;
+            font-weight: 400;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        /* --- SECCIÓN SOBRE MÍ --- */
+        #sobre-mi {
+            padding: 60px 0 40px;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 40px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 60%;
+            height: 4px;
+            background: var(--primary-gradient);
+            bottom: -10px;
+            left: 0;
+            border-radius: 2px;
+        }
+
+        .about-text p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            color: #d1d1d1;
+            margin-bottom: 1.5rem;
+        }
+
+        /* --- BOTÓN CV --- */
+        .btn-download-cv {
+            background: var(--primary-gradient);
+            color: white;
+            border: none;
+            padding: 12px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 114, 198, 0.3);
+        }
+
+        .btn-download-cv:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 20px rgba(0, 114, 198, 0.5);
+            color: white;
+        }
+
+        /* --- TECH STACK --- */
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+
+        .tech-item {
+            background: var(--card-bg);
+            padding: 25px 15px;
+            border-radius: 12px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,0.05);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .tech-item:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent-color);
+            background: #2a2a2a;
+        }
+
+        .tech-item i {
+            font-size: 2.2rem;
+            margin-bottom: 12px;
+            display: block;
+            color: var(--accent-color);
+        }
+
+        .tech-item span {
+            font-weight: 500;
+            font-size: 0.95rem;
+        }
+
+        .tech-item small {
+            font-size: 0.75rem;
+            color: #777;
+            margin-top: 4px;
+        }
+
+        .legacy-tag {
+            font-size: 0.7rem;
+            background: #444;
+            padding: 2px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            margin-top: 8px;
+            display: inline-block;
+            color: #aaa;
+        }
+
+        /* --- SECCIÓN EXPERIENCIA --- */
+        #experiencia {
+            padding: 80px 0;
+            background-color: #161616;
+        }
+
+        .experience-box {
+            position: relative;
+            padding-left: 30px;
+            border-left: 2px solid var(--timeline-border);
+            margin-bottom: 50px;
+        }
+
+        .experience-box::before {
+            content: '';
+            position: absolute;
+            left: -9px;
+            top: 0;
+            width: 16px;
+            height: 16px;
+            border-radius: 50%;
+            background: var(--primary-gradient);
+            border: 3px solid #1a1a1a;
+        }
+
+        .exp-date {
+            font-size: 0.9rem;
+            color: var(--accent-color);
+            font-weight: 600;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        .exp-company {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .exp-role {
+            font-size: 1rem;
+            color: #ccc;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .exp-description {
+            color: #999;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+
+        .exp-tags {
+            margin-top: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .exp-tag {
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+
+        /* --- SECCIÓN PROYECTOS --- */
+        #proyectos {
+            padding: 80px 0;
+        }
+
+        .project-card {
+            background: var(--card-bg);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            height: 100%;
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .project-img-placeholder {
+            height: 180px;
+            background: linear-gradient(135deg, #2c2c2c 0%, #1a1a1a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+
+        .project-img-placeholder i {
+            font-size: 4rem;
+            color: rgba(255, 255, 255, 0.1);
+        }
+
+        .project-body {
+            padding: 25px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .project-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: var(--whiteColor);
+        }
+
+        .project-text {
+            font-size: 0.85rem;
+            color: #888;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .project-tech {
+            margin-bottom: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .badge-tech {
+            background: rgba(0, 198, 255, 0.08);
+            color: var(--accent-color);
+            border: 1px solid rgba(0, 198, 255, 0.15);
+            font-size: 0.65rem;
+            padding: 3px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .project-links {
+            margin-top: auto;
+            display: flex;
+            gap: 12px;
+            border-top: 1px solid rgba(255,255,255,0.05);
+            padding-top: 15px;
+        }
+
+        .btn-project {
+            flex: 1;
+            text-align: center;
+            font-size: 0.8rem;
+            padding: 8px 0;
+            border-radius: 6px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+
+        .btn-github {
+            background: transparent;
+            color: #ccc;
+            border: 1px solid #444;
+        }
+
+        .btn-github:hover {
+            background: #333;
+            color: white;
+            border-color: #666;
+        }
+
+        .btn-demo {
+            background: transparent;
+            color: var(--accent-color);
+            border: 1px solid var(--accent-color);
+        }
+
+        .btn-demo:hover {
+            background: var(--accent-color);
+            color: #000;
+        }
+
+        .highlight { color: var(--accent-color); }
+
+        /* --- CONTACTO / FOOTER --- */
+        .footer {
+            padding: 80px 0 40px;
+            background: #111;
+            border-top: 1px solid #222;
+        }
+
+        .contact-card {
+            background: #1a1a1a;
+            padding: 40px;
+            border-radius: 20px;
+            border: 1px solid #333;
+            margin-bottom: 40px;
+        }
+
+        .social-links-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .social-pill {
+            padding: 10px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            color: white;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            font-size: 0.95rem;
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .social-pill:hover {
+            transform: scale(1.05);
+            color: white;
+        }
+
+        .pill-email { background: #0072C6; }
+        .pill-github { background: #181717; }
+        .pill-linkedin { background: #0A66C2; }
+        .pill-whatsapp { background: #25D366; }
+
+    </style>
+</head>
 <body>
-    <header class="header">     
-        <nav class="navbar navbar-expand-lg" style="background-color: #444444; padding: 8px 15px;">
 
-        <div class="container-fluid">    
-          <!-- Botón para colapsar en móviles -->
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation" >
-            <span class="navbar-toggler-icon" > </span>
-          </button>
-      
-          <!-- Menú de navegación -->
-          <div class="collapse navbar-collapse me-auto" id="navbarNav">
-            <ul class="navbar-nav fs-4 flex-column flex-lg-row" >
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#" style="color: #e4f1f5;">Sobre Mi</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#estudios" style="color: #e4f1f5;">Estudios</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#experiencia" style="color: #e4f1f5;">Experiencia</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#stack" style="color: #e4f1f5;">Stack</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#proyectos" style="color: #e4f1f5;">Proyectos</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" class="btn btn-outline-warning btn-lg" href="#footer" style="color: #e4f1f5;">Contacto</a>
-              </li>
-            </ul>
-          </div>
-          <!-- Logo de programación alineado a la derecha -->
-          <a class="navbar-brand ms-auto" href="#" style="font-size: 24px; color: white;">
-             ElvinDev
-             <i class="fas fa-code"></i> <i class="fa-solid fa-laptop"></i>
-          </a>
-        </div>
-      </nav>    
-    </header>    
-
-    <main class="main">                                    
-      <!-- SECCION SOBRE MI -->
-      <section class="principalSection">  
-        <div class="container">
-          <div class="info">
-            <h1>Elvin Cooper</h1>
-            <h2>Software Developer</h2>
-          </div>
-          <div class="imagen">
-            <img src="imagenes/DEV-10.png" alt="Profile picture">
-          </div>
-        </div>
-
-        <p>
-          Programador Analista desde 2022 trabajando en el ecosistema de Oracle (Oracle SQL, PL/SQL, Oracle Forms y Reports), optimizando sistemas empresariales 
-          y gestionando grandes volúmenes de datos, Ademas evolucionado hacia arquitecturas modernas con Python 🐍. <br>
-          Mi enfoque principal es cerrar la brecha entre los sistemas transaccionales robustos y las aplicaciones web modernas. Tengo la capacidad de
-          transformar la logica de negocio compleja en Oracle hacia microservicios  escalables utilizando los frameworks de Flask 🌶️ y FastAPI ⚡ para construir 
-          APIs Rest, optimizando procesos mediante contenedores de Docker 🐳, flujos de CI/CD Pipelines y control del version del codigo con Git y GitHub 
-          con la finalidad de construir soluciones innovadoras y escalables para entornos empresariales. 🚀
-        </p>    
-        <div class="mt-4">
-          <a href="CV/Elvin_Cooper_CV.pdf" class="btn btn-outline-primary btn-lg" target="_blank">
-            <i class="fas fa-external-link-alt"></i> Descargar mi CV/Resume
-          </a>                    
-        </div>  
-        <br>          
-        <div style="display: flex; gap: 10px; align-items: center;">
-          <a href="https://github.com/ElvinCooper" target="_blank"></a>
-            <img src="https://img.shields.io/badge/GitHub-ElvinCooper-181717?style=flat&logo=github&logoColor=white" alt="GitHub Profile">
-          </a>  
-          <a href="https://www.linkedin.com/in/elvin-cooper-8a5647b6/" target="_blank">
-            <img src="https://img.shields.io/badge/LinkedIn-elvin--cooper-0A66C2?style=flat&logo=linkedin&logoColor=white" alt="LinkedIn Profile">
-          </a>
-
-          <a href="mailto:tuemail@gmail.com">
-            <img src="https://img.shields.io/badge/Gmail-ing.elvin01cooper@gmail.com-D14836?style=flat&logo=gmail&logoColor=white" alt="Send Email">
-          </a>
-        </div>
-      </section>         
-      
-      <!-- Seccion de Mis Estudios-->
-      <section id="estudios" class="estudiosSection container">        
-          <h2>
-            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-book" viewBox="0 0 16 16">
-              <path d="M1 2.828c.885-.37 2.154-.829 3.5-.829 1.065 0 2.174.368 3 1 .826-.632 1.935-1 3-1 1.346 0 2.615.458 3.5.829V14.5c-.885-.37-2.154-.5-3.5-.5-1.086 0-2.354.273-3.5 1-1.146-.727-2.414-1-3.5-1-1.346 0-2.615.13-3.5.5V2.828z"/>
-            </svg>
-            
-            Mis Estudios
-          </h2>                                
-                  <!-- Estudios -->
-          <div class="row"> 
-            <div class="col-md-6">
-              <div class="estudio-item">
-                <h3 class="estudio-grade"> Ingeniería de Sistemas y Computacion</h3>
-                <p><strong>Universidad: </strong>Universidad Dominicana O&M</p>
-                <p><strong>Año de finalización: </strong>2016</p>
-                <p><strong>Descripción: </strong>Durante esta carrera, adquirí conocimientos en programación, bases de datos y arquitectura de software,
-                        programas ofimaticos, etica profesional etc.</p>
-              </div>
+    <header>     
+        <nav class="navbar navbar-expand-lg fixed-top">
+            <div class="container">    
+                <a class="navbar-brand" href="#">ELVIN COOPER</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav ms-auto text-center">
+                        <li class="nav-item"><a class="nav-link" href="#sobre-mi">Sobre mí</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#experiencia">Experiencia</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#proyectos">Proyectos</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#footer">Contacto</a></li>
+                    </ul>
+                </div>
             </div>
-          <div class="col-md-6">
-            <div class="estudio-item">
-              <h3 class="estudio-grade">Curso de Desarrollo con Python</h3>
-              <p><strong>Institución: </strong>Udemy</p>
-              <p><strong>Año: </strong>2023</p>
-              <p><strong>Descripción: </strong>Curso enfocado en el desarrollo de aplicaciones con Python, abordando desde los fundamentos hasta conceptos avanzados. Incluyó manejo de bases de datos con SQL y NoSQL, desarrollo backend con Flask, algoritmos tareas especificas etc.</p>
+        </nav>
+    </header>
+
+    <main>
+        <!-- SECCIÓN HERO -->
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-icon">
+                    <i class="bi bi-hdd-network-fill"></i>
+                </div>
+                <h1 class="hero-title">Elvin Cooper</h1>
+                <p class="hero-subtitle highlight">Backend Developer</p>
             </div>
-          </div>
-        </div>
-                          
-        
-        <div class="row">
-          <div class="col-md-6">
-            <div class="estudio-item">
-              <h3 class="estudio-grade">Diploma de Ingles</h3>
-              <p><strong>Institución: </strong>Alianza Juvenil</p>
-              <p><strong>Año: </strong>2017</p>
-              <p><strong>Descripción: </strong>Programa de formación en inglés con enfoque en gramática, comprensión oral, escritura y conversación. Incluyó práctica en situaciones reales. Actualmente, tengo un nivel B2 según el Marco Común Europeo de Referencia para las Lenguas (MCER)..</p>
-            </div>
-          </div>
+        </section>
 
-          <div class="col-md-6">
-            <div class="estudio-item">
-              <h3 class="estudio-grade">Cursos de Desarrollo y Programación</h3>
-              <p><strong>Plataforma: </strong>Alura Latam</p>
-              <p><strong>Año: </strong>2022</p>
-              <p><strong>Cursos realizados: </strong>Lógica de Programación, HTML, Git y GitHub, Programación Orientada a Objetos</p>
-              <p><strong>Descripción: </strong>Formación en conceptos clave de desarrollo web y programación. Aprendí desde la base de la lógica de programación hasta el manejo de Git y GitHub para control de versiones, además de principios de Programación Orientada a Objetos aplicados en proyectos prácticos.</p>
-            </div>
-          </div>
-                                          
-              
-            </div>
-          </div>
-        </section>                                                  
-
-                                                      <!---------------------------  SECCION DE EXPERIENCIAS -------------------------------------->                                                      
-
-        <section class="experienceSection container" id="experiencia">
-            <h2>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-suitcase-lg" viewBox="0 0 16 16">
-                <path d="M5 2a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2h3.5A1.5 1.5 0 0 1 16 3.5v9a1.5 1.5 0 0 1-1.5 1.5H14a.5.5 0 0 1-1 0H3a.5.5 0 0 1-1 0h-.5A1.5 1.5 0 0 1 0 12.5v-9A1.5 1.5 0 0 1 1.5 2zm1 0h4a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1M1.5 3a.5.5 0 0 0-.5.5v9a.5.5 0 0 0 .5.5H3V3zM15 12.5v-9a.5.5 0 0 0-.5-.5H13v10h1.5a.5.5 0 0 0 .5-.5m-3 .5V3H4v10z"/>
-              </svg>
-              Experiencia
-            </h2>
-    
-            <ol class="experienceList">
-                <li class="experienceItemList">
-                    <div class="decorativeCircleList"></div>
-                    <time datetime="2022-05">Mayo 2022 - Actualidad</time>
-                    <h3>Programador Analista en Central Romana</h3>
-                    <p>
-                        Desarrollo y mantenimiento de aplicaciones empresariales utilizando herramientas de Oracle. Trabajo con Oracle Forms, Oracle Reports y SQL Developer para la gestión de bases de datos en Oracle SQL y programación en PL/SQL.
-                        Análisis y optimización de consultas SQL para mejorar el rendimiento de los sistemas internos.
-                    </p>
-                </li>
-
-                <li class="experienceItemList">
-                    <div class="decorativeCircleList"></div>
-                    <time datetime="2023-04">Abril 2023 - Actualidad</time>
-                    <h3>Desarrollador Independiente con Python</h3>
-                    <p>
-                        Desarrollo de soluciones tecnológicas personalizadas con Python. He creado aplicaciones RESTful usando Flask, SQLAlchemy, JWT y pruebas automatizadas con Pytest.
-                        Destacan proyectos como una API para gestión de contactos, con autenticación segura, documentación Swagger y arquitectura profesional basada en Blueprints y Marshmallow.
-                        Manejo de bases de datos relacionales con SQLite y Oracle SQL.
-                        Experiencia en control de versiones con Git y GitHub, e implementación de entornos virtuales y archivos `.env` para configuración flexible y segura.
-                        Adicionalmente, he trabajado en automatización de procesos, envío de correos con Mailgun, y construcción de interfaces API robustas y seguras.
-                    </p>
-                </li>
-
-                <li class="experienceItemList">
-                <div class="decorativeCircleList"></div>
-                <time datetime="2016-01">Enero 2016 - Mayo 2022</time>
-                <h3>Servicio al Cliente - Casa de Campo</h3>
-                <p>
-                  Atención al cliente en un restaurante bilingüe, ofreciendo un servicio de alta calidad a clientes de diversas nacionalidades.  
-                  Experiencia en comunicación en inglés, mejorando habilidades de listening y speaking al interactuar con hablantes nativos.  
-                  Desarrollo de habilidades interpersonales y resolución de problemas para garantizar la mejor experiencia del cliente.  
-                  Trabajo en equipo y gestión eficiente del tiempo en un entorno de ritmo acelerado.  
-                </p>
-              </li>
-
-
-
-            </ol>
-          </section>
-
-                                             <!-------------------------- Seccion de Stack Tecnologico -------------------------------->
-
-                <section class="StackSection container" id="stack">
-        <h2>
-          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" 
-            class="bi bi-code-slash" viewBox="0 0 16 16">
-            <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0"/>
-          </svg>
-          Stack Tecnológico
-        </h2>
-
-        <div class="row mt-4">
-          <!-- Lenguajes y Frameworks -->
-          <div class="col-md-4">
-            <h3><i class="fas fa-code"></i> Lenguajes & Frameworks</h3>
-            <ul>
-              <li><i class="fab fa-python"></i> Python</li>
-              <li><i class="fas fa-fire"></i> Flask</li>
-             <li><i class="fas fa-vial"></i> Pytest</li>
-
-              <li><i class="fas fa-database"></i> PL/SQL</li>              
-            </ul>
-          </div>
-
-          <!-- Bases de Datos -->
-          <div class="col-md-4">
-            <h3><i class="fas fa-database"></i> Bases de Datos</h3>
-            <ul>
-              <li><i class="fas fa-database"></i> Oracle SQL</li>
-              <li><i class="fas fa-database"></i> Postgresql</li>
-              <li><i class="fas fa-server"></i> SQLAlchemy (ORM)</li>
-            </ul>
-          </div>
-
-          <!-- Herramientas & Ecosistema de Desarrollo -->
-          <div class="col-md-4">
-            <h3><i class="fas fa-tools"></i> Herramientas DevOps</h3>
-            <ul>
-              <li><i class="fab fa-git-alt"></i> Git & GitHub</li>
-              <li><i class="fab fa-project-diagram"></i>CI/CD (GitHub Actions)</li>
-              <li><i class="fas fa-box"></i> Docker</li>
-            </ul>
-          </div>
-
-          <!-- herramientas legacy -->
-          <div class="col-md-4">
-            <h3><i class="fas fa-tools"></i> Legacy</h3>
-            <ul>
-              <li><i class="fas fa-layer-group"></i> Oracle Forms</li>
-              <li><i class="fas fa-file-alt"></i> Oracle Reports</li>
-            </ul>
-          </div>
-
-          <!-- IA -->
-          <div class="col-md-4">
-            <h3><i class="fas fa-tools"></i> IA Tools y Skills </h3>
-            <ul>
-              <li><i class="fas fa-terminal"></i> Prompt Engineering</li>
-              <li><i class="fas fa-brain"></i> NoteBook LLM</li>
-            </ul>
-          </div>
-        </div>
-      </section>                
-    
-                                              <!---------------  SECCION DE PROYECTOS ---------------------->
-
-      <section class="projectsSection container" id="proyectos">
-            <h2>
-              <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-code-slash" viewBox="0 0 16 16" >
-                <path d="M10.478 1.647a.5.5 0 1 0-.956-.294l-4 13a.5.5 0 0 0 .956.294zM4.854 4.146a.5.5 0 0 1 0 .708L1.707 8l3.147 3.146a.5.5 0 0 1-.708.708l-3.5-3.5a.5.5 0 0 1 0-.708l3.5-3.5a.5.5 0 0 1 .708 0m6.292 0a.5.5 0 0 0 0 .708L14.293 8l-3.147 3.146a.5.5 0 0 0 .708.708l3.5-3.5a.5.5 0 0 0 0-.708l-3.5-3.5a.5.5 0 0 0-.708 0" />
-              </svg>
-              Proyectos
-            </h2>
-                         <!----- Proyecto No. 1 ------->
-            <article class="experienceItem">
-              <h3>Proyecto 1: API Rest para Gestion de Inventario</h3>
-              <div class="badges">
-                <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
-                <img src="https://img.shields.io/badge/Flask-2.x-green?logo=flask" alt="Flask">
-                <a href="#"><img src="https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white" alt="Postgres"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff" alt="Docker"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Pytest-fff?logo=pytest&logoColor=000" alt="Pytest"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=173647" alt="Swagger"></a>
-                <a href="https://github.com/<usuario>/<repositorio>/actions/workflows/<archivo_workflow>.yml">
-                <a href="https://github.com/ElvinCooper/Inventario-Docker"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub"></a>
-                <a href="https://github.com/ElvinCooper/Inventario-Docker/actions/workflows/test-and-deploy.yaml" target="_blank">
-                <img src="https://img.shields.io/github/actions/workflow/status/ElvinCooper/Inventario-Docker/test-and-deploy.yaml?branch=main&label=CI/CD&logo=githubactions&logoColor=white" alt="CI/CD"></a>
-              </div>
-
-              <p>
-                API RESTful robusta desarrollada con Flask y PostgreSQL para gestión integral de inventario, incluyendo productos, categorías, proveedores y movimientos. 
-                Implementa autenticación JWT, paginación optimizada, filtros avanzados por categoría y usuario, y validación de datos con Marshmallow. 
-                Arquitectura modular con Flask-Smorest Blueprints, documentación Swagger automática, y despliegue containerizado con Docker. 
-                Pipeline CI/CD automatizado para testing usando PostgreSQL y deployment continuo.
-                <br>Documentación interactiva disponible y endpoints listos para probar en línea.
-              </p>
-              
-              <a href="https://github.com/ElvinCooper/Inventario-Docker" target="_blank">
-                <div class="row project-gallery mb-3">
-                    <div class="col-md-4 col-sm-12">
-                      <img src="imagenes/inventario-api.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+        <!-- SECCIÓN SOBRE MÍ -->
+        <section id="sobre-mi">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-12">
+                        <h2 class="section-title">Sobre Mí</h2>
+                        <div class="about-text">
+                            <p>Soy <span class="highlight fw-bold">Elvin Cooper</span>, Ingeniero Backend con una sólida trayectoria en el manejo de datos y lógica de negocio compleja. Mi especialidad radica en el ecosistema <span class="highlight">Oracle</span>, donde domino <span class="fw-bold">PL/SQL</span> junto a herramientas clásicas como <span class="fw-bold">Forms y Reports</span>, garantizando la continuidad y optimización de sistemas críticos.</p>
+                            
+                            <p>He evolucionado mi stack tecnológico hacia entornos modernos utilizando <span class="highlight">Python y Flask</span> para el desarrollo de APIs robustas, asegurando la calidad del código con <span class="fw-bold">Pytest</span> e integrando contenedores con <span class="fw-bold">Docker</span>. Gestiono flujos de trabajo profesionales en <span class="fw-bold">Git/GitHub</span> e implemento automatización mediante <span class="highlight">GitHub Actions</span> para CI/CD.</p>
+                            
+                            <div class="mt-4 text-center text-lg-start">
+                                <a href="CV_Elvin_Cooper.pdf" download class="btn-download-cv">
+                                    <i class="bi bi-file-earmark-arrow-down-fill"></i> Descargar mi CV
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <div class="col-md-4 col-sm-12">
-                      <img src="imagenes/contactos-api.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+                </div>
+
+                <div class="row mt-5">
+                    <div class="col-12">
+                        <h3 class="h4 mb-4" style="color: #888;">Stack Tecnológico</h3>
+                        <div class="tech-grid">
+                            <div class="tech-item">
+                                <i class="fa-brands fa-python"></i>
+                                <span>Python / Flask</span>
+                                <small>Testing: Pytest</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-database-fill"></i>
+                                <span>Oracle / PL-SQL</span>
+                                <small>Relational DB</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-database"></i>
+                                <span>PostgreSQL</span>
+                                <small>Open Source DB</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="fa-brands fa-docker"></i>
+                                <span>Docker</span>
+                                <small>Containerization</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-git"></i>
+                                <span>Git & GitHub</span>
+                                <small>Version Control</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-infinity"></i>
+                                <span>CI/CD</span>
+                                <small>GitHub Actions</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-robot"></i>
+                                <span>IA & Gemini</span>
+                                <small>NotebookLM / CLI</small>
+                            </div>
+                            <div class="tech-item">
+                                <i class="bi bi-layers-half"></i>
+                                <span>Forms / Reports</span>
+                                <span class="legacy-tag">Legacy Specialist</span>
+                            </div>
+                        </div>
                     </div>
-              </div>
-              </a>
-              <h4>
-                <i class="fab fa-github" style="font-size: 40px; vertical-align: middle; margin-right: 10px; color: antiquewhite;"></i>
-                <a href="https://github.com/ElvinCooper/Inventario-Docker" target="_blank" style="color: antiquewhite; text-decoration: none;">
-                  Ir al código en GitHub
-                </a>
-              </h4>              
-
-              <h4>
-                <img src="./imagenes/swaguer-icon.png" alt="Swagger" width="65" height="55" style="vertical-align: middle; margin-right: 8px;">
-                <a href="https://api-inventario-docker.onrender.com/apidocs" target="_blank" style="color: antiquewhite;">
-                  Ir a la documentación Swagger
-                </a>
-              </h4>
-            </article>
-
-                        <!----- Proyecto No. 2 ------->
-            <article class="experienceItem">
-              <h3>Proyecto 2: API REST para App Móvil de Noticias (InfoNovaX)</h3>
-              <div class="badges">
-                <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
-                <img src="https://img.shields.io/badge/Flask-2.x-green?logo=flask" alt="Flask">
-                <a href="#"><img src="https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white" alt="Postgres"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Pytest-fff?logo=pytest&logoColor=000" alt="Pytest"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=173647" alt="Swagger"></a>
-                <a href="https://github.com/<usuario>/<repositorio>/actions/workflows/<archivo_workflow>.yml">
-                <a href="https://github.com/ElvinCooper/Inventario-Docker"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub"></a>
-                <a href="https://github.com/ElvinCooper/Inventario-Docker/actions/workflows/test-and-deploy.yaml" target="_blank">
-                <img src="https://img.shields.io/github/actions/workflow/status/ElvinCooper/api_noticias/test-and-deploy.yaml?branch=main&label=CI/CD&logo=githubactions&logoColor=white" alt="CI/CD"></a>
-              </div>
-              
-              <p>
-                API RESTful desarrollada en colaboración para una aplicación móvil de noticias. Permite gestionar usuarios, publicaciones, favoritos, categorías y países.
-                Implementada con Flask, SQLAlchemy, JWT, y documentada con Swagger. Utiliza Blueprints para modularidad, y CORS para integración con frontend móvil.
-              </p>
-
-              <!-- Galería de imágenes -->
-              <div class="row project-gallery mb-3">
-                <div class="col-md-4 col-sm-12">
-                  <img src="imagenes/api_noticias.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
                 </div>
-                <div class="col-md-4 col-sm-12">
-                  <img src="imagenes/infonovax_infografia.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
+            </div>
+        </section>
+
+        <!-- SECCIÓN EXPERIENCIA -->
+        <section id="experiencia">
+            <div class="container">
+                <h2 class="section-title">Experiencia Laboral</h2>
+                <div class="row mt-5">
+                    <div class="col-lg-10 mx-auto">
+                        <div class="experience-box">
+                            <span class="exp-date">Junio 2021 - Presente</span>
+                            <h3 class="exp-company">Banco de Reservas</h3>
+                            <p class="exp-role">Especialista en Aplicaciones de Negocios</p>
+                            <ul class="exp-description list-unstyled">
+                                <li>• Soporte y mantenimiento a aplicaciones CORE Bancarias.</li>
+                                <li>• Desarrollo de scripts SQL/PL-SQL para optimización de procesos.</li>
+                                <li>• Analista y resolución de incidencias en sistemas de alta disponibilidad.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span class="exp-tag">PL/SQL</span>
+                                <span class="exp-tag">SQL Tuning</span>
+                                <span class="exp-tag">Core Bancario</span>
+                                <span class="exp-tag">Oracle DB</span>
+                            </div>
+                        </div>
+                        <div class="experience-box">
+                            <span class="exp-date">Marzo 2017 - Junio 2021</span>
+                            <h3 class="exp-company">Seguros Reservas</h3>
+                            <p class="exp-role">Analista de Programación</p>
+                            <ul class="exp-description list-unstyled">
+                                <li>• Desarrollo y mantenimiento de módulos CORE Seguros utilizando Oracle Forms y Reports.</li>
+                                <li>• Elaboración de reportes operativos y ejecutivos complejos.</li>
+                                <li>• Integración de lógica de negocio mediante Packages y Triggers.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span class="exp-tag">Oracle Forms</span>
+                                <span class="exp-tag">Oracle Reports</span>
+                                <span class="exp-tag">PL/SQL</span>
+                            </div>
+                        </div>
+                        <div class="experience-box">
+                            <span class="exp-date">Enero 2015 - Febrero 2017</span>
+                            <h3 class="exp-company">Indotel</h3>
+                            <p class="exp-role">Auxiliar de Base de Datos</p>
+                            <ul class="exp-description list-unstyled">
+                                <li>• Administración básica y soporte a bases de datos institucionales.</li>
+                                <li>• Elaboración de reportes de estadísticas de telecomunicaciones.</li>
+                            </ul>
+                            <div class="exp-tags">
+                                <span class="exp-tag">Admin DB</span>
+                                <span class="exp-tag">Data Reporting</span>
+                                <span class="exp-tag">SQL</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
-           
-              <h4>
-                <i class="fab fa-github" style="font-size: 40px; vertical-align: middle; margin-right: 10px; color: antiquewhite;"></i>
-                <a href="https://github.com/ElvinCooper/api_noticias" target="_blank" style="color: antiquewhite;">
-                  Ir al codigo en GitHub
-                </a>
-              </h4>
+            </div>
+        </section>
 
-              <h4>
-                <img src="./imagenes/swaguer-icon.png" alt="Swagger" width="65" height="55" style="vertical-align: middle; margin-right: 8px;">
-                <a href="https://api-rest-infonovax.vercel.app/docs" target="_blank" style="color: antiquewhite;">
-                  Ir a la documentación Swagger
-                </a>
-              </h4>
-            </article>
+        <!-- SECCIÓN PROYECTOS -->
+        <section id="proyectos">
+            <div class="container">
+                <h2 class="section-title">Proyectos Destacados</h2>
+                <div class="row mt-5 g-4">
+                    
+                    <!-- Proyecto 1 -->
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <div class="project-img-placeholder">
+                                <i class="bi bi-box-seam"></i>
+                                <div style="position: absolute; bottom: 10px; right: 15px; font-size: 0.7rem; opacity: 0.5;">SISTEMA ERP</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">Gestión de Inventario</h3>
+                                <p class="project-text">Sistema robusto para el control de activos y stock masivo, optimizando consultas mediante triggers y procedimientos almacenados.</p>
+                                <div class="project-tech">
+                                    <span class="badge-tech">PostgreSQL</span>
+                                    <span class="badge-tech">SQL</span>
+                                    <span class="badge-tech">Reports</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ElvinCooper/inventory-system" target="_blank" class="btn-project btn-github">
+                                        <i class="bi bi-github"></i> Código
+                                    </a>
+                                    <a href="#" class="btn-project btn-demo">
+                                        <i class="bi bi-eye"></i> Demo
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
+                    <!-- Proyecto 2 -->
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <div class="project-img-placeholder">
+                                <i class="bi bi-code-slash"></i>
+                                <div style="position: absolute; bottom: 10px; right: 15px; font-size: 0.7rem; opacity: 0.5;">API RESTFUL</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">API Consultas Bancarias</h3>
+                                <p class="project-text">Microservicios para validación de transacciones en tiempo real, con alta seguridad y manejo de concurrencia.</p>
+                                <div class="project-tech">
+                                    <span class="badge-tech">Python</span>
+                                    <span class="badge-tech">Flask</span>
+                                    <span class="badge-tech">Pytest</span>
+                                    <span class="badge-tech">Docker</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ElvinCooper/banking-api" target="_blank" class="btn-project btn-github">
+                                        <i class="bi bi-github"></i> Código
+                                    </a>
+                                    <a href="#" class="btn-project btn-demo">
+                                        <i class="bi bi-eye"></i> API Docs
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-                                       <!----- Proyecto No. 3 ------->
-            <article class="experienceItem">
-              <h3>Proyecto 3: API REST para Gestión de Contactos</h3>
-              <div class="badges">
-                <img src="https://img.shields.io/badge/Python-3.11-blue?logo=python" alt="Python">
-                <img src="https://img.shields.io/badge/Flask-2.x-green?logo=flask" alt="Flask">
-                <a href="#"><img src="https://img.shields.io/badge/Postgres-%23316192.svg?logo=postgresql&logoColor=white" alt="Postgres"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Docker-2496ED?logo=docker&logoColor=fff" alt="Docker"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Pytest-fff?logo=pytest&logoColor=000" alt="Pytest"></a>
-                <a href="#"><img src="https://img.shields.io/badge/Swagger-85EA2D?logo=swagger&logoColor=173647" alt="Swagger"></a>
-                <a href="https://github.com/<usuario>/<repositorio>/actions/workflows/<archivo_workflow>.yml">
-                <a href="https://github.com/ElvinCooper/Inventario-Docker"><img src="https://img.shields.io/badge/GitHub-000?logo=github&logoColor=white" alt="GitHub"></a>
-                <a href="https://github.com/ElvinCooper/Inventario-Docker/actions/workflows/test-and-deploy.yaml" target="_blank">
-              </div>
-            
-              <p>
-                Este proyecto es una API RESTful para gestionar contactos, desarrollada con Python, Flask y SQLAlchemy.
-                Incluye autenticación con JWT, documentación Swagger, estructura modular con Blueprints y pruebas automatizadas con Pytest.
-                Puedes ver el código completo en GitHub haciendo clic en la imagen o en el enlace debajo.
-              </p>
+                    <!-- Proyecto 3 -->
+                    <div class="col-md-4">
+                        <div class="project-card">
+                            <div class="project-img-placeholder">
+                                <i class="bi bi-bar-chart-line"></i>
+                                <div style="position: absolute; bottom: 10px; right: 15px; font-size: 0.7rem; opacity: 0.5;">DATA ANALYTICS</div>
+                            </div>
+                            <div class="project-body">
+                                <h3 class="project-title">Dashboard Telecom</h3>
+                                <p class="project-text">Automatización de reportes estadísticos para análisis de cobertura y calidad de servicios a nivel nacional.</p>
+                                <div class="project-tech">
+                                    <span class="badge-tech">Oracle 12c</span>
+                                    <span class="badge-tech">PL/SQL</span>
+                                    <span class="badge-tech">Excel</span>
+                                </div>
+                                <div class="project-links">
+                                    <a href="https://github.com/ElvinCooper/telecom-analytics" target="_blank" class="btn-project btn-github">
+                                        <i class="bi bi-github"></i> Código
+                                    </a>
+                                    <a href="#" class="btn-project btn-demo">
+                                        <i class="bi bi-eye"></i> Reporte
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-              <div class="row project-gallery mb-3">
-                <div class="col-md-4 col-sm-12">
-                  <img src="imagenes/api-contact.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
                 </div>
+            </div>
+        </section>
 
-                <div class="col-md-4 col-sm-12">
-                  <img src="imagenes/swagger-contacto-api.png" alt="Captura 1 - InfoNovaX" class="img-fluid rounded shadow-sm mb-3 project-img-small">
-                </div>
-              </div>
-              <!-- Imagen con enlace a GitHub -->              
-              <h4>
-                <i class="fab fa-github" style="font-size: 40px; vertical-align: middle; margin-right: 10px; color: antiquewhite;"></i>
-                <a href="https://github.com/ElvinCooper/-Contact_api" target="_blank" style="color: antiquewhite;">
-                  Ir al codigo en GitHub
-                </a>
-              </h4>
-
-              <h4>
-                <img src="./imagenes/swaguer-icon.png" alt="Swagger" width="65" height="55" style="vertical-align: middle; margin-right: 8px;">
-                <a href="https://api-contact-1k8z.onrender.com/apidocs" target="_blank" style="color: antiquewhite;">
-                  Ir a la documentación Swagger
-                </a>
-              </h4>
-            </article>
-                        
     </main>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://kit.fontawesome.com/YOUR-FONT-AWESOME-KIT.js" crossorigin="anonymous"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function () {
-        let navLinks = document.querySelectorAll(".nav-link");
-        let navbarToggler = document.querySelector(".navbar-toggler");
-        let navbarCollapse = document.querySelector(".navbar-collapse");
-    
-        navLinks.forEach(function (link) {
-          link.addEventListener("click", function () {
-            // Si el menú está abierto en móvil, se cierra
-            if (window.innerWidth < 992) {
-              navbarToggler.click();
-            }
-          });
-        });
-      });
-    </script>
+
+    <!-- FOOTER Y CONTACTO -->
+    <footer class="footer" id="footer">
+        <div class="container text-center">
+            <div class="contact-card">
+                <h2 class="mb-3">¡Hagamos algo increíble juntos!</h2>
+                <p class="text-secondary mb-5">Si buscas un perfil que domine bases de datos, lógica backend y nuevas herramientas de IA, estoy listo para colaborar.</p>
+                
+                <div class="social-links-container">
+                    <a class="social-pill pill-email" href="mailto:ing.elvin01cooper@gmail.com?subject=Contacto Portafolio">
+                        <i class="bi bi-envelope"></i> Email
+                    </a>
+                    <a class="social-pill pill-github" href="https://github.com/ElvinCooper" target="_blank">
+                        <i class="bi bi-github"></i> GitHub
+                    </a>
+                    <a class="social-pill pill-linkedin" href="https://www.linkedin.com/in/elvin-cooper-8a5647b6/" target="_blank">
+                        <i class="bi bi-linkedin"></i> LinkedIn
+                    </a>
+                    <a class="social-pill pill-whatsapp" href="https://wa.me/18092501334" target="_blank">
+                        <i class="bi bi-whatsapp"></i> WhatsApp
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-secondary small mt-5">&copy; 2025 Elvin Cooper | Especialista en Backend & Oracle PL/SQL</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-<footer class="footer" id="footer">
-  <p>&copy; 2025 Elvin Cooper. Todos los derechos reservados.</p>
-  <div class="social-links">
-                      <!-- <h3 class="estudio-grade"> Contacto</h3> -->
-    <ul class="footer-social-buttons">
-      <li>
-        <a class="socialButton email" href="mailto:ing.elvin01cooper@gmail.com?subject=Contacto Portafolio&body= Me gustaría agendar una entrevista" target="_blank">
-          <i class="bi bi-envelope"></i> Email
-        </a>
-      </li>
-      <li>
-        <a class="socialButton github" href="https://github.com/ElvinCooper" target="_blank">
-          <i class="bi bi-github"></i> GitHub
-        </a>
-      </li>
-      <li>
-        <a class="socialButton linkedin" href="https://www.linkedin.com/in/elvin-cooper-8a5647b6/" target="_blank">
-          <i class="bi bi-linkedin"></i> LinkedIn
-        </a>
-      </li>
-      <li>
-        <a class="socialButton whatsapp" href="https://wa.me/18092501339/" target="_blank">
-          <i class="bi bi-whatsapp"></i> WhatsApp
-        </a>
-      </li>
-    </ul>
-  </div>
-</footer>
 </html>
